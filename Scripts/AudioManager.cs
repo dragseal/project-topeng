@@ -27,12 +27,11 @@ public partial class AudioManager : Node
 
 	public void PlayAmbience(string streamPath)
 	{
-		AudioStream music = GD.Load<AudioStream>(streamPath);
+		AudioStream ambience = GD.Load<AudioStream>(streamPath);
 		
-		// Jangan restart jika lagu yang sama sedang diputar
-		if (_ambiencePlayer.Stream == music && _ambiencePlayer.Playing) return;
+		if (_ambiencePlayer.Stream == ambience && _ambiencePlayer.Playing) return;
 
-		_ambiencePlayer.Stream = music;
+		_ambiencePlayer.Stream = ambience;
 		_ambiencePlayer.Play();
 	}
 
