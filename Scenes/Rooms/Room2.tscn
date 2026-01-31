@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://hf5awtrm3u0m" path="res://Sprites/TileSet/wall.png" id="3_ut3n5"]
 [ext_resource type="Texture2D" uid="uid://djgt4u45uu2uj" path="res://Sprites/TileSet/floor.png" id="4_7a7y1"]
 [ext_resource type="PackedScene" uid="uid://bcrtf5bdnaoh7" path="res://Scenes/Door.tscn" id="5_cxadd"]
+[ext_resource type="Script" uid="uid://djqfsynagnc0i" path="res://Scripts/MarkerSystem/marker.gd" id="5_momfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("3_ut3n5")
@@ -66,3 +67,11 @@ NextRoom = "res://Scenes/Rooms/Room4.tscn"
 SpawnX = 74.0
 SpawnY = 62.0
 metadata/_edit_group_ = true
+
+[node name="Marker1" type="Marker2D" parent="." unique_id=873717936]
+position = Vector2(248, 134)
+script = ExtResource("5_momfn")
+
+[node name="Marker2" type="Marker2D" parent="." unique_id=1979302004]
+position = Vector2(79, 135)
+script = ExtResource("5_momfn")

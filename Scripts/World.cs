@@ -15,13 +15,15 @@ public partial class World : Node2D
             SpawnPlayer(245, 64); // Example coordinates
             global.playerSpawned = true;
         }
-        var marker = GetNode<MarkerManager>("/root/MarkerManager");
-
+        //var marker = GetNode<MarkerManager>("/root/MarkerManager");
+        //GD.Print(marker.Call("GetMarkerPosition", "Marker1"));
     }
     public override void _Process(double delta)
 	{
+        var marker = GetNode<Node>("/root/MarkerManager");
+        var spawnPos = (Vector2)marker.Call("GetMarkerPosition", "Marker1");
         if (Input.IsActionJustPressed("debugKey")) {
-            SpawnGhost(240, 170);
+           SpawnGhost(spawnPos.X, spawnPos.Y);
         }
     }
     public void SpawnPlayer(float x, float y)
@@ -36,7 +38,7 @@ public partial class World : Node2D
     public void SpawnGhost(float x, float y)
     {
         // 2. Create the instance
-        var ghost = GhostScene.Instantiate<CharacterBody2D>();
+        var ghost = GhostScene.Instantiate<Area2D>();
         // 3. Set the position BEFORE adding it to the tree
         ghost.GlobalPosition = new Vector2(x, y);
         // 4. Add it to the current room

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://hf5awtrm3u0m" path="res://Sprites/TileSet/wall.png" id="2_khg3p"]
 [ext_resource type="Texture2D" uid="uid://djgt4u45uu2uj" path="res://Sprites/TileSet/floor.png" id="3_aycly"]
 [ext_resource type="PackedScene" uid="uid://bcrtf5bdnaoh7" path="res://Scenes/Door.tscn" id="4_xg3cn"]
+[ext_resource type="Script" uid="uid://djqfsynagnc0i" path="res://Scripts/MarkerSystem/marker.gd" id="5_khg3p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("2_khg3p")
@@ -63,3 +64,11 @@ metadata/_edit_group_ = true
 [node name="DoorFinal" parent="." unique_id=1400840472 instance=ExtResource("4_xg3cn")]
 position = Vector2(168, 190)
 RoomNumber = -1
+
+[node name="Marker1" type="Marker2D" parent="." unique_id=436697754]
+position = Vector2(262, 115)
+script = ExtResource("5_khg3p")
+
+[node name="Marker2" type="Marker2D" parent="." unique_id=1040849150]
+position = Vector2(70, 118)
+script = ExtResource("5_khg3p")

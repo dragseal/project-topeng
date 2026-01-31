@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://djgt4u45uu2uj" path="res://Sprites/TileSet/floor.png" id="3_u8o5a"]
 [ext_resource type="PackedScene" uid="uid://bcrtf5bdnaoh7" path="res://Scenes/Door.tscn" id="4_rj2n6"]
 [ext_resource type="PackedScene" uid="uid://dkd685txyxsj" path="res://Scenes/Object.tscn" id="5_cefv8"]
+[ext_resource type="Script" uid="uid://djqfsynagnc0i" path="res://Scripts/MarkerSystem/marker.gd" id="6_u8o5a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("2_cefv8")
@@ -64,3 +65,11 @@ metadata/_edit_group_ = true
 [node name="Object" parent="." unique_id=752288657 instance=ExtResource("5_cefv8")]
 position = Vector2(62, 193)
 ObjectType = "mask"
+
+[node name="Marker1" type="Marker2D" parent="." unique_id=1419039189]
+position = Vector2(235, 175)
+script = ExtResource("6_u8o5a")
+
+[node name="Marker2" type="Marker2D" parent="." unique_id=1309179154]
+position = Vector2(75, 79)
+script = ExtResource("6_u8o5a")

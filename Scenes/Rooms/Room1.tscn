@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://djgt4u45uu2uj" path="res://Sprites/TileSet/floor.png" id="4_x5lkd"]
 [ext_resource type="PackedScene" uid="uid://dkd685txyxsj" path="res://Scenes/Object.tscn" id="5_kdtvj"]
 [ext_resource type="PackedScene" uid="uid://bcrtf5bdnaoh7" path="res://Scenes/Door.tscn" id="5_uc76g"]
-[ext_resource type="Texture2D" uid="uid://d4nf83xxkqi3w" path="res://Sprites/Hantu/hantu.png" id="8_g5bqt"]
+[ext_resource type="Script" uid="uid://djqfsynagnc0i" path="res://Scripts/MarkerSystem/marker.gd" id="10_tlmo5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("3_kdtvj")
@@ -66,9 +66,6 @@ metadata/_edit_group_ = true
 position = Vector2(65, 150)
 ObjectType = "merah"
 
-[node name="Hantu" type="Sprite2D" parent="." unique_id=2118367539]
-position = Vector2(122, 116)
-texture = ExtResource("8_g5bqt")
-
 [node name="Marker1" type="Marker2D" parent="." unique_id=327531567]
 position = Vector2(247, 92)
+script = ExtResource("10_tlmo5")
