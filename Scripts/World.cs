@@ -37,8 +37,8 @@ public partial class World : Node2D
 	{
 		if (PlayerScene == null) return;
 		var player = PlayerScene.Instantiate<CharacterBody2D>();
-		player.GlobalPosition = new Vector2(x, y);
 		AddChild(player);
+		player.Position = new Vector2(x, y);
 	}
 
 	// Method ini sekarang siap dipanggil dari DialogueManager

@@ -20,7 +20,7 @@ public partial class Door : StaticBody2D
 	{
 		var global = GetNode<Simpleton>("/root/Simpleton");
 		if (Name == "DoorFinal") {
-			if (global.maskTaken && global.toyTaken) {
+			if (global.ItemInInventory.Contains("mask") && global.ItemInInventory.Contains("toy")) {
 				Modulate = Colors.Green;
 			}
 			else {
@@ -29,7 +29,7 @@ public partial class Door : StaticBody2D
 		}
 		else {
 			Modulate = Colors.Green;
-			if (!global.merahTaken) {
+			if (!global.ItemInInventory.Contains("merah")) {
 				Modulate = Colors.Orange;
 			}
 		}
