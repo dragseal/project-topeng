@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://co1ok2pbvol0"]
 
+[ext_resource type="Script" uid="uid://cwb5h486avvjo" path="res://Scripts/World.cs" id="1_aycly"]
 [ext_resource type="PackedScene" uid="uid://gysa1isg7hy6" path="res://Scenes/Menu.tscn" id="1_be18u"]
 [ext_resource type="Texture2D" uid="uid://hf5awtrm3u0m" path="res://Sprites/TileSet/wall.png" id="2_khg3p"]
 [ext_resource type="Texture2D" uid="uid://djgt4u45uu2uj" path="res://Sprites/TileSet/floor.png" id="3_aycly"]
@@ -34,6 +35,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_kdtvj")
 
 [node name="World" type="Node2D" unique_id=1434134610]
+script = ExtResource("1_aycly")
 
 [node name="CanvasLayer" parent="." unique_id=872002648 instance=ExtResource("1_be18u")]
 

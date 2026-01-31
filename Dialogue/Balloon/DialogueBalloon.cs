@@ -10,7 +10,6 @@ namespace DialogueManagerRuntime
 	[Export] public bool AutoStart = false;
 	[Export] public string NextAction = "ui_accept";
 	[Export] public string SkipAction = "ui_cancel";
-	
 
 	Control balloon;
 	RichTextLabel characterLabel;
@@ -18,6 +17,7 @@ namespace DialogueManagerRuntime
 	VBoxContainer responsesMenu;
 	Polygon2D progress;
 	AudioStreamPlayer dialogueSound; 
+	TextureRect fullCG;
 
 	Array<Variant> temporaryGameStates = new Array<Variant>();
 	bool isWaitingForInput = false;
@@ -59,7 +59,8 @@ namespace DialogueManagerRuntime
 	  responsesMenu = GetNode<VBoxContainer>("%ResponsesMenu");
 	  progress = GetNode<Polygon2D>("%Progress");
 	  dialogueSound = GetNode<AudioStreamPlayer>("%DialogueSound");
-
+	  fullCG = GetNode<TextureRect>("%FullCG");
+	
 		dialogueLabel.Connect("spoke", Callable.From((string letter, int index, float speed) => 
 		{
 			OnDialogueLabelSpoke(letter, index, speed);
@@ -135,6 +136,24 @@ namespace DialogueManagerRuntime
 	  DialogueManager.Mutated -= OnMutated;
 	}
 
+	public void ShowCG(string path)
+	{
+		if (string.IsNullOrEmpty(path))
+		{
+			fullCG.Hide();
+			return;
+		}
+		
+		var texture = GD.Load<Texture2D>(path);
+		fullCG.Texture = texture;
+		fullCG.Show();
+	}
+
+	public void HideCG()
+	{
+		fullCG.Hide();
+	}
+
 
 	public override void _UnhandledInput(InputEvent @event)
 	{
@@ -171,21 +190,42 @@ namespace DialogueManagerRuntime
 
 	public async void Start(Resource dialogueResource = null, string title = "", Array<Variant> extraGameStates = null)
 	{
-	  temporaryGameStates = new Array<Variant> { this } + (extraGameStates ?? new Array<Variant>());
-	  isWaitingForInput = false;
+		// Inisialisasi list state dasar dengan 'this' (DialogueBalloon)
+		var states = new Array<Variant> { this };
 
-	  if (IsInstanceValid(dialogueResource))
-	  {
-		DialogueResource = dialogueResource;
-	  }
-	  if (title != "")
-	  {
-		StartFromTitle = title;
-	  }
+		// Tambahkan World.Instance jika tersedia agar bisa panggil SpawnGhost
+		if (World.Instance != null) states.Add(World.Instance);
 
-	  DialogueLine = await DialogueManager.GetNextDialogueLine(DialogueResource, StartFromTitle, temporaryGameStates);
-	  Show();
+		// Tambahkan AudioManager.Instance jika tersedia agar bisa panggil PlayBGM
+		if (AudioManager.Instance != null) states.Add(AudioManager.Instance);
+
+		// Gabungkan dengan extraGameStates jika ada
+		if (extraGameStates != null)
+		{
+			foreach (var state in extraGameStates)
+			{
+				states.Add(state);
+			}
+		}
+
+		temporaryGameStates = states;
+		isWaitingForInput = false;
+
+		if (IsInstanceValid(dialogueResource))
+		{
+			DialogueResource = dialogueResource;
+		}
+		
+		if (!string.IsNullOrEmpty(title))
+		{
+			StartFromTitle = title;
+		}
+
+		// Ambil baris dialog pertama menggunakan states yang sudah diperbarui
+		DialogueLine = await DialogueManager.GetNextDialogueLine(DialogueResource, StartFromTitle, temporaryGameStates);
+		Show();
 	}
+
 
 
 	public async void Next(string nextId)
