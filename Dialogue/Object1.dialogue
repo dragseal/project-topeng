@@ -1,4 +1,5 @@
 ~ start
+do PlayBGM("res://SFX/Interact.mp3")
 Picked up a [color=#FF0000]Bloody Key[/color].
 do SpawnGhost(300, 150)
 => END

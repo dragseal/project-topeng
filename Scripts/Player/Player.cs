@@ -9,6 +9,9 @@ public partial class Player : CharacterBody2D
 	private bool _isTalking;
 	private ShapeCast2D _shapeCast;
 	private Vector2 _lastDirection = Vector2.Down; // Default facing down
+	
+	private bool isWalking = false;
+	private float currentWalkingDuration;					
 												   // Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -64,6 +67,17 @@ public partial class Player : CharacterBody2D
 		if (direction != Vector2.Zero)
 		{
 			_lastDirection = direction.Normalized();
+			if (!isWalking) {
+				AudioManager.Instance.PlayBGM("res://SFX/Walk.mp3");
+			}
+			isWalking = true;
+		}
+		else
+		{
+			if (isWalking) {
+			AudioManager.Instance.StopBGM();
+			}
+			isWalking = false;
 		}
 
 		// The ShapeCast now always points where you LAST moved
@@ -86,6 +100,7 @@ public partial class Player : CharacterBody2D
 				//var global = GetNode<Simpleton>("/root/Simpleton");
 				if (collider is Door hitDoor && Input.IsActionJustPressed("interactKey"))
 				{
+					AudioManager.Instance.PlayBGM("res://SFX/Door.mp3");
 					if (hitDoor.RoomNumber == 1 && !global.merahTaken && !_isTalking) {
 						var dialogue = GD.Load<Resource>("res://Dialogue/Locked1.dialogue");
 						DialogueManager.ShowDialogueBalloon(dialogue, "start");

@@ -1,4 +1,5 @@
 ~ start
+do PlayBGM("res://SFX/Interact.mp3")
 Picked up a [color=#FF0000]Makeshift Plushie[/color].
 You notice a child's bone in it.
 do SpawnGhost(300, 150)
