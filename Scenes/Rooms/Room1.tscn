@@ -67,7 +67,7 @@ metadata/_edit_group_ = true
 [node name="Object" parent="." unique_id=752288657 instance=ExtResource("5_kdtvj")]
 position = Vector2(65, 150)
 ObjectType = "merah"
-DialogueOnInteracted = "Dialogue1"
+DialogueOnInteracted = "Object1"
 
 [node name="Marker1" type="Marker2D" parent="." unique_id=327531567]
 position = Vector2(247, 92)

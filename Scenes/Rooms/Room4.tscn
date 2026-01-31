@@ -69,9 +69,8 @@ metadata/_edit_group_ = true
 
 [node name="Object" parent="." unique_id=752288657 instance=ExtResource("5_ldur7")]
 position = Vector2(259, 77)
-scale = Vector2(2, 2)
 ObjectType = "toy"
-DialogueOnInteracted = "Dialogue2"
+DialogueOnInteracted = "Object2"
 
 [node name="Marker1" type="Marker2D" parent="." unique_id=1018111972]
 position = Vector2(103, 36)

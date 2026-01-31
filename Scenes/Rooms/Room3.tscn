@@ -69,9 +69,8 @@ metadata/_edit_group_ = true
 
 [node name="Object" parent="." unique_id=752288657 instance=ExtResource("5_cefv8")]
 position = Vector2(62, 193)
-scale = Vector2(2, 2)
 ObjectType = "mask"
-DialogueOnInteracted = "Dialogue3"
+DialogueOnInteracted = "Object3"
 
 [node name="Marker1" type="Marker2D" parent="." unique_id=1419039189]
 position = Vector2(235, 175)
