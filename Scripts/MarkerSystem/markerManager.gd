@@ -5,5 +5,5 @@ extends Node
 func GetMarkerPosition (markerName : String) -> Vector2 :
 	if (MarkerList.has(markerName)):
 		var markerGet = MarkerList[markerName] as Node2D
-		return markerGet.position
+		return markerGet.global_position
 	return Vector2.ZERO

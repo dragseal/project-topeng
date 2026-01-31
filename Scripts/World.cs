@@ -15,8 +15,6 @@ public partial class World : Node2D
             SpawnPlayer(245, 64); // Example coordinates
             global.playerSpawned = true;
         }
-        //var marker = GetNode<MarkerManager>("/root/MarkerManager");
-        //GD.Print(marker.Call("GetMarkerPosition", "Marker1"));
     }
     public override void _Process(double delta)
 	{
