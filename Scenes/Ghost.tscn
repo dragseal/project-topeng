@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://cx3tqhvuewykc"]
 
 [ext_resource type="Texture2D" uid="uid://d4nf83xxkqi3w" path="res://Sprites/Hantu/hantu.png" id="1_infc1"]
+[ext_resource type="Script" uid="uid://bgivxayxvdye3" path="res://Scripts/Ghost.cs" id="1_rcd3j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcd3j"]
 size = Vector2(13, 23)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_infc1"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1365159762]
+[node name="Area2D" type="Area2D" unique_id=320610706]
+collision_layer = 4
+script = ExtResource("1_rcd3j")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=423003617]
 texture = ExtResource("1_infc1")
@@ -21,3 +24,5 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(1, 14.5)
 scale = Vector2(7, 1)
 texture = SubResource("CanvasTexture_infc1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

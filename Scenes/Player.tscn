@@ -20,7 +20,7 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=676787677]
 y_sort_enabled = true
-collision_mask = 10
+collision_mask = 14
 script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1654332089]

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://gysa1isg7hy6" path="res://Scenes/Menu.tscn" id="1_f4spw"]
 [ext_resource type="Script" uid="uid://cwb5h486avvjo" path="res://Scripts/World.cs" id="1_uc76g"]
 [ext_resource type="PackedScene" uid="uid://euja0vhk45sl" path="res://Scenes/Player.tscn" id="2_x5lkd"]
+[ext_resource type="PackedScene" uid="uid://cx3tqhvuewykc" path="res://Scenes/Ghost.tscn" id="3_arvw2"]
 [ext_resource type="Texture2D" uid="uid://hf5awtrm3u0m" path="res://Sprites/TileSet/wall.png" id="3_kdtvj"]
 [ext_resource type="Texture2D" uid="uid://djgt4u45uu2uj" path="res://Sprites/TileSet/floor.png" id="4_x5lkd"]
 [ext_resource type="PackedScene" uid="uid://dkd685txyxsj" path="res://Scenes/Object.tscn" id="5_kdtvj"]
@@ -39,6 +40,7 @@ sources/0 = SubResource("TileSetAtlasSource_kdtvj")
 [node name="World" type="Node2D" unique_id=1434134610]
 script = ExtResource("1_uc76g")
 PlayerScene = ExtResource("2_x5lkd")
+GhostScene = ExtResource("3_arvw2")
 
 [node name="CanvasLayer" parent="." unique_id=872002648 instance=ExtResource("1_f4spw")]
 
