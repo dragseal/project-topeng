@@ -20,9 +20,9 @@ config/icon="res://icon.svg"
 DialogueManager="*uid://c3rodes2l3gxb"
 Simpleton="*uid://bl8w22kf3j50s"
 MarkerManager="*uid://brt555v3857eb"
-AudioManager="*uid://dca431u20q86"
 MaskModeManager="*uid://d3p6n7xd5qyj6"
 ItemShowingManager="*uid://cmqfgttx3tjbh"
+AudioManager="*uid://pk21mn62fil8"
 
 [dialogue_manager]
 
