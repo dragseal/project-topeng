@@ -1,4 +1,16 @@
 ~ start
-TAMAT
-NGANTUK AKU TAK TURU SEK
+do PlayAmbience("res://BGM/Ambience.mp3")
+do ShowCG("res://Level1.png")
+Testes panel 1
+do ShowCG("res://Level2.png")
+Testes panel 2
+do PlayBGM("res://BGM/Epilogue.mp3")
+do ShowCG("res://Level3.png")
+Testes panel 3
+do ShowCG("res://Level4.png")
+Testes panel 4
+Panel 4 lanjutan, buat ngetess. Yeay
+STOPPP
+do HideCG()
+do StopBGM()
 => END

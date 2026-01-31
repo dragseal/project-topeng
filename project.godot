@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 DialogueManager="*uid://c3rodes2l3gxb"
 Simpleton="*uid://bl8w22kf3j50s"
 MarkerManager="*uid://brt555v3857eb"
+AudioManager="*uid://dca431u20q86"
 MaskModeManager="*uid://d3p6n7xd5qyj6"
 ItemShowingManager="*uid://cmqfgttx3tjbh"
 
@@ -103,7 +104,7 @@ changeMask={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/Dialogue1.dialogue", "res://Dialogue/Object1.dialogue", "res://Dialogue/Object2.dialogue", "res://Dialogue/Object3.dialogue", "res://Dialogue/Locked1.dialogue", "res://Dialogue/Locked2.dialogue", "res://Dialogue/Ending.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/Dialogue1.dialogue", "res://Dialogue/Object1.dialogue", "res://Dialogue/Object2.dialogue", "res://Dialogue/Object3.dialogue", "res://Dialogue/Locked1.dialogue", "res://Dialogue/Locked2.dialogue", "res://Dialogue/Ending.dialogue", "res://Dialogue/Narasi1.dialogue", "res://Dialogue/Prologue.dialogue")
 
 [layer_names]
 
