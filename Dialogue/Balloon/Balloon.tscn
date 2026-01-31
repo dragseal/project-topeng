@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_hfvdi"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_1j1j0"]
 [ext_resource type="FontFile" uid="uid://dpwrd1ef1sqdt" path="res://Fonts/PIXEARG_.TTF" id="3_3c8ng"]
+[ext_resource type="AudioStream" uid="uid://dc0ku2mp00dpy" path="res://SFX/Dialogue.mp3" id="5_0n2y0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_235ry"]
 content_margin_left = 6.0
@@ -212,6 +213,11 @@ text = "Response Example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2124437748]
 unique_name_in_owner = true
+stream = ExtResource("5_0n2y0")
+volume_db = -16.299
+pitch_scale = 0.81
+autoplay = true
+max_polyphony = 4
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

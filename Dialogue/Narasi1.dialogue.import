@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dsqn3cb7v33hm"
+path="res://.godot/imported/Narasi1.dialogue-2de78ccb19d3fe323a88be2add59da2b.tres"
+
+[deps]
+
+source_file="res://Dialogue/Narasi1.dialogue"
+dest_files=["res://.godot/imported/Narasi1.dialogue-2de78ccb19d3fe323a88be2add59da2b.tres"]
+
+[params]
+
+defaults=true

@@ -1,3 +1,8 @@
 ~ start
-Picked up a [color=#FF0000]Bloody Key[/color].
+NPC: Apakah kamu ingin melihat hantu?
+- Ya
+    do World.emit_signal("RequestGhostSpawn", 300, 200)
+- Tidak
+    NPC: Baiklah.
+
 => END

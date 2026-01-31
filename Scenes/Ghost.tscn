@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d4nf83xxkqi3w" path="res://Sprites/Hantu/hantu.png" id="1_infc1"]
 [ext_resource type="Script" uid="uid://bgivxayxvdye3" path="res://Scripts/Ghost.cs" id="1_rcd3j"]
+[ext_resource type="AudioStream" uid="uid://ba4lmfqeu3wfh" path="res://BGM/Chase.mp3" id="3_hmvil"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcd3j"]
 size = Vector2(13, 23)
@@ -28,5 +29,9 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(1, 14.5)
 scale = Vector2(7, 1)
 texture = SubResource("CanvasTexture_infc1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=420521895]
+stream = ExtResource("3_hmvil")
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="OnBodyEntered"]
