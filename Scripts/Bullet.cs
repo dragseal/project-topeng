@@ -18,7 +18,7 @@ public partial class Bullet : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         timer += 1f;
-        if (timer >= 240) {
+        if (timer >= 360) {
             _alpha -= 0.2f;
             var color = _sprite.SelfModulate;
             color.A = _alpha;
