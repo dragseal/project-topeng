@@ -5,6 +5,7 @@ public partial class Object : Node2D
 {
 	[Export] public string ObjectType;
 	[Export] public string DialogueOnInteracted;
+	[Export] public bool IsPersist;
 	public bool Interacted = false;
 
 	// Called when the node enters the scene tree for the first time.
