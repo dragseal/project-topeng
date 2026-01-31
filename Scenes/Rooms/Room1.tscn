@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dkd685txyxsj" path="res://Scenes/Object.tscn" id="5_kdtvj"]
 [ext_resource type="PackedScene" uid="uid://bcrtf5bdnaoh7" path="res://Scenes/Door.tscn" id="5_uc76g"]
 [ext_resource type="Script" uid="uid://djqfsynagnc0i" path="res://Scripts/MarkerSystem/marker.gd" id="10_tlmo5"]
-[ext_resource type="AudioStream" uid="uid://d3hojho48dsp6" path="res://BGM/Ambience.mp3" id="10_y7b8n"]
+[ext_resource type="Script" uid="uid://cejadx0irxywd" path="res://Scenes/Rooms/BGMTrigger.cs" id="11_y7b8n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("3_kdtvj")
@@ -71,6 +71,5 @@ ObjectType = "merah"
 position = Vector2(247, 92)
 script = ExtResource("10_tlmo5")
 
-[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=307549457]
-stream = ExtResource("10_y7b8n")
-autoplay = true
+[node name="Ambience" type="Node2D" parent="." unique_id=264936085]
+script = ExtResource("11_y7b8n")
