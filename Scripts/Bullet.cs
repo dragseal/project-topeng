@@ -23,6 +23,9 @@ public partial class Bullet : CharacterBody2D
             var color = _sprite.SelfModulate;
             color.A = _alpha;
             _sprite.SelfModulate = color;
+            if (_alpha <= 0) {
+                QueueFree();
+            }
         }
         //GlobalPosition += _velocity * (float)delta;
         MoveAndSlide();
