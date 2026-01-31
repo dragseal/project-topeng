@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://1dmxj75y5mth"]
+
+[ext_resource type="Script" uid="uid://c1w7qq8m0m4gn" path="res://Scripts/GameOver.cs" id="1_m5628"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1618603912]
+script = ExtResource("1_m5628")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=585472428]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

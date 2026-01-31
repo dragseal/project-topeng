@@ -13,24 +13,22 @@ public partial class Player : CharacterBody2D
     public override void _Ready()
     {
         _shapeCast = GetNode<ShapeCast2D>("ShapeCast2D");
-        //_detectionArea = GetNodeOrNull<Area2D>("../Object1/Area2D");
     }
     public override void _PhysicsProcess(double delta)
     {
-        // if (Input.IsActionJustPressed("debugKey")) {
-        // }
         _isTalking = GetTree().GetNodesInGroup("DialogueBalloon").Count > 0;
-
         // Dynamically get the Area2D of Object1
         var detectionArea = GetNodeOrNull<Area2D>("../Object/Area2D");
+        var global = GetNode<Simpleton>("/root/Simpleton");
 
         if (detectionArea != null &&
                 detectionArea.OverlapsBody(this) &&
                 Input.IsActionJustPressed("interactKey") &&
-                !_isTalking)
+                !_isTalking &&
+                !global.playerDead
+                )
         {
             var interactable = detectionArea.GetParent<Object>();
-            var global = GetNode<Simpleton>("/root/Simpleton");
             if (interactable != null && !interactable.Interacted)
             {
                 if (interactable.ObjectType == "merah") {
@@ -54,11 +52,10 @@ public partial class Player : CharacterBody2D
                     DialogueManager.ShowDialogueBalloon(dialogue, "start");
                     interactable.QueueFree();
                 }
-
             }
         }
         Vector2 direction = Vector2.Zero;
-        if (!_isTalking)
+        if (!_isTalking && !global.playerDead)
         {
             direction = Input.GetVector("moveLeft", "moveRight", "moveUp", "moveDown");
         }
@@ -86,7 +83,7 @@ public partial class Player : CharacterBody2D
             for (int i = 0; i < _shapeCast.GetCollisionCount(); i++)
             {
                 var collider = _shapeCast.GetCollider(i);
-                var global = GetNode<Simpleton>("/root/Simpleton");
+                //var global = GetNode<Simpleton>("/root/Simpleton");
                 if (collider is Door hitDoor && Input.IsActionJustPressed("interactKey"))
                 {
                     if (hitDoor.RoomNumber == 1 && !global.merahTaken && !_isTalking) {
