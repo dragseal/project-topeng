@@ -9,6 +9,7 @@ public partial class Simpleton : Node
     public bool toyTaken = false;
     public bool maskTaken = false;
     public bool playerDead = false;
+    public int playerHP = 3;
 
     public void ResetStats() {
         playerRoom = 1;
@@ -17,5 +18,6 @@ public partial class Simpleton : Node
         toyTaken = false;
         maskTaken = false;
         playerDead = false;
+        playerHP = 3;
     }
 }

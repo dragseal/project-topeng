@@ -12,6 +12,9 @@ public partial class Player : CharacterBody2D
                                                    // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        var area = GetNode<Area2D>("Area2D");
+        area.BodyEntered += OnBodyEntered;
+        
         _shapeCast = GetNode<ShapeCast2D>("ShapeCast2D");
     }
     public override void _PhysicsProcess(double delta)
@@ -77,6 +80,8 @@ public partial class Player : CharacterBody2D
             sprite.Scale = new Vector2(direction.X < 0 ? 1 : -1, 1);
         }
         JitterCheck();
+        BulletCollission();
+
         // Check if the ShapeCast hit anything
         if (_shapeCast.IsColliding())
         {
@@ -126,6 +131,27 @@ public partial class Player : CharacterBody2D
             if (_inputVector != Vector2.Zero) {
                 Position = Position.Round();
             }
+        }
+    }
+    private void BulletCollission() {
+        var collision = GetLastSlideCollision();
+        if (collision?.GetCollider() is Node collider && collider.IsInGroup("Enemy"))
+        {
+            GD.Print(collision);
+        }
+    }
+    private void OnBodyEntered(Node body)
+    {
+        if (body.IsInGroup("Bullets")) {
+            body.QueueFree();
+        }
+        var global = GetNode<Simpleton>("/root/Simpleton");
+        var over = GetNode<GameOverTrigger>("/root/GameOverTrigger");
+        if (global.playerHP > 1) {
+            global.playerHP -= 1;
+        }
+        else {
+            over.ShowGameOverScreen();
         }
     }
 }

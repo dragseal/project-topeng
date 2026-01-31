@@ -19,12 +19,15 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dewec"]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=676787677]
 y_sort_enabled = true
 collision_mask = 14
 script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1654332089]
+visible = false
 position = Vector2(1.0000001, -2)
 scale = Vector2(0.89, 1.245)
 shape = SubResource("RectangleShape2D_gntrk")
@@ -35,6 +38,7 @@ position = Vector2(1, -4)
 sprite_frames = SubResource("SpriteFrames_kyqiw")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=40398766]
+visible = false
 scale = Vector2(0.705, 0.555)
 shape = SubResource("RectangleShape2D_kyqiw")
 target_position = Vector2(0, 12)
@@ -42,3 +46,10 @@ collision_mask = 40
 
 [node name="PlayerMarker" type="Node2D" parent="." unique_id=960968416]
 script = ExtResource("3_gntrk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1077520884]
+collision_layer = 64
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1598989876]
+shape = SubResource("RectangleShape2D_dewec")
