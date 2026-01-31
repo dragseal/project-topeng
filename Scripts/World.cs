@@ -1,47 +1,58 @@
 using Godot;
 using System;
 using Godot.Collections;
+
 public partial class World : Node2D
 {
-	// 1. Export the Player scene so you can drag the Player.tscn here
+	// Tambahkan Singleton agar mudah diakses oleh DialogueManager dan script lain
+	public static World Instance { get; private set; }
+
 	[Export] public PackedScene PlayerScene;
 	[Export] public PackedScene GhostScene;
 
 	public override void _Ready()
 	{
+		Instance = this; // Inisialisasi singleton
+
 		var global = GetNode<Simpleton>("/root/Simpleton");
 		if (!global.playerSpawned)
 		{
-			SpawnPlayer(245, 64); // Example coordinates
+			SpawnPlayer(245, 64);
 			global.playerSpawned = true;
 		}
 	}
+
 	public override void _Process(double delta)
 	{
-		var marker = GetNode<Node>("/root/MarkerManager");
-		var spawnPos = (Vector2)marker.Call("GetMarkerPosition", "Marker1");
-		if (Input.IsActionJustPressed("debugKey")) {
-		   SpawnGhost(spawnPos.X, spawnPos.Y);
+		// Logic debug Anda tetap sama
+		if (Input.IsActionJustPressed("debugKey")) 
+		{
+			var marker = GetNode<Node>("/root/MarkerManager");
+			var spawnPos = (Vector2)marker.Call("GetMarkerPosition", "Marker1");
+			SpawnGhost(spawnPos.X, spawnPos.Y);
 		}
 	}
+
 	public void SpawnPlayer(float x, float y)
 	{
-		// 2. Create the instance
+		if (PlayerScene == null) return;
 		var player = PlayerScene.Instantiate<CharacterBody2D>();
-		// 3. Set the position BEFORE adding it to the tree
 		player.GlobalPosition = new Vector2(x, y);
-		// 4. Add it to the current room
 		AddChild(player);
 	}
+
+	// Method ini sekarang siap dipanggil dari DialogueManager
 	public void SpawnGhost(float x, float y)
 	{
-		// 2. Create the instance
+		if (GhostScene == null) 
+		{
+			GD.PrintErr("GhostScene belum dimasukkan di Inspector!");
+			return;
+		}
+		
 		var ghost = GhostScene.Instantiate<Area2D>();
-		// 3. Set the position BEFORE adding it to the tree
 		ghost.GlobalPosition = new Vector2(x, y);
-		// 4. Add it to the current room
 		AddChild(ghost);
+		GD.Print($"Ghost berhasil muncul di: {x}, {y}");
 	}
-
-
 }
