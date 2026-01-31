@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://euja0vhk45sl"]
+
+[ext_resource type="Script" uid="uid://dsl1uk108jvlf" path="res://Scripts/Player/Player.cs" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://c4iw7lmmq03dm" path="res://Sprites/Player/Walk/walk_d.png" id="1_rpqav"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gntrk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kyqiw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rpqav")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=676787677]
+y_sort_enabled = true
+collision_mask = 10
+script = ExtResource("1_kyqiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1654332089]
+position = Vector2(1.0000001, -2)
+scale = Vector2(0.89, 1.245)
+shape = SubResource("RectangleShape2D_gntrk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=331979517]
+texture_filter = 1
+position = Vector2(1, -4)
+sprite_frames = SubResource("SpriteFrames_kyqiw")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=40398766]
+scale = Vector2(0.705, 0.555)
+shape = SubResource("RectangleShape2D_kyqiw")
+target_position = Vector2(0, 12)
+collision_mask = 40

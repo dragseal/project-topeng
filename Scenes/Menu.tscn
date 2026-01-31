@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://gysa1isg7hy6"]
+
+[ext_resource type="Script" uid="uid://cd5wip11h5ghh" path="res://Scripts/MenuControl.cs" id="1_3kf3n"]
+
+[node name="MenuControl" type="Control" unique_id=1591089562]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3kf3n")

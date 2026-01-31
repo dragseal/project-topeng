@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cx3tqhvuewykc"]
+
+[ext_resource type="Texture2D" uid="uid://d4nf83xxkqi3w" path="res://Sprites/Hantu/hantu.png" id="1_infc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcd3j"]
+size = Vector2(13, 23)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_infc1"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1365159762]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=423003617]
+texture = ExtResource("1_infc1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1993857808]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_rcd3j")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=254869402]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1, 14.5)
+scale = Vector2(7, 1)
+texture = SubResource("CanvasTexture_infc1")

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dkd685txyxsj"]
+
+[ext_resource type="Script" uid="uid://b71h604ii0nlm" path="res://Scripts/Object.cs" id="1_oni83"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gy52u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg1dn"]
+
+[node name="Node2D" type="Node2D" unique_id=752288657]
+y_sort_enabled = true
+script = ExtResource("1_oni83")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1681412606]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(15.515, 15.515)
+texture = SubResource("CanvasTexture_gy52u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1778517131]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1754584371]
+scale = Vector2(0.875, 0.955)
+shape = SubResource("RectangleShape2D_yg1dn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=856641332]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=226936318]
+scale = Vector2(1.48, 1.48)
+shape = SubResource("RectangleShape2D_yg1dn")

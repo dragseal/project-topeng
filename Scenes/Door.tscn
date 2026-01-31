@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bcrtf5bdnaoh7"]
+
+[ext_resource type="Script" uid="uid://cuu7o5qncqy4a" path="res://Scripts/Door.cs" id="1_38ogf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_38ogf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27480"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1400840472]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_38ogf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1113720306]
+z_index = -1
+scale = Vector2(17.065, 17.065)
+texture = SubResource("CanvasTexture_38ogf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2053566115]
+shape = SubResource("RectangleShape2D_27480")
