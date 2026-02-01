@@ -30,7 +30,6 @@ public partial class Player : CharacterBody2D
 		// Dynamically get the Area2D of Object1
 		var detectionArea = GetNodeOrNull<Area2D>("../Object/Area2D");
 		var global = GetNode<Simpleton>("/root/Simpleton");
-
 		if (detectionArea != null &&
 				detectionArea.OverlapsBody(this) &&
 				Input.IsActionJustPressed("interactKey") &&
@@ -47,6 +46,7 @@ public partial class Player : CharacterBody2D
 				if (dialogue!=null){
 					DialogueManager.ShowDialogueBalloon(dialogue, "start");
 				}
+	
 				if (!interactable.IsPersist){	
 					interactable.QueueFree();
 				}

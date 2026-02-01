@@ -129,6 +129,22 @@ namespace DialogueManagerRuntime
 		Start();
 	  }
 	}
+	
+	public void OpenImage(string ImageName)
+	{
+		var objectImage = GD.Load<Texture2D>("res://Sprites/Items/"+ImageName+".png");
+				GD.Print("Image terbaca ="+ objectImage);
+				if (objectImage!=null){
+					GD.Print("Image terbaca yeay="+ objectImage);
+					var globalImage = GetNode<Node>("/root/ItemShowingManager");
+					globalImage.Call("_show_item",ImageName);
+				}
+	}
+	public void CloseImage()
+	{
+		var globalImage = GetNode<Node>("/root/ItemShowingManager");
+		globalImage.Call("_hide_item");	
+	}
 
 	public void EnableMask()
 	{

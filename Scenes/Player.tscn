@@ -21,6 +21,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dewec"]
+size = Vector2(100, 126.315796)
 
 [node name="Player" type="CharacterBody2D" unique_id=676787677]
 y_sort_enabled = true
@@ -56,6 +57,6 @@ collision_layer = 16
 collision_mask = 272
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1598989876]
-position = Vector2(0, 0.495)
+position = Vector2(1, -4.0000005)
 scale = Vector2(0.1, 0.19)
 shape = SubResource("RectangleShape2D_dewec")
