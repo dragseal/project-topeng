@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d3uqgmypgg4e5"
+path="res://.godot/imported/Trigger2.dialogue-a5f2aea581e4f263abe43f6c59ab3cf5.tres"
+
+[deps]
+
+source_file="res://Dialogue/Trigger2.dialogue"
+dest_files=["res://.godot/imported/Trigger2.dialogue-a5f2aea581e4f263abe43f6c59ab3cf5.tres"]
+
+[params]
+
+defaults=true

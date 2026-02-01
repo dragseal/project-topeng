@@ -165,6 +165,7 @@ public partial class Player : CharacterBody2D
 
 		if (global.playerHP <= 0) 
 		{
+			AudioManager.Instance.PlayAmbience("res://SFX/Jumpscare.mp3");
 			over.ShowGameOverScreen();
 		}
 		else 

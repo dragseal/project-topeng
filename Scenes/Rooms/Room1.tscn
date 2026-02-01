@@ -82,3 +82,8 @@ DialogueId = "Prologue"
 [node name="Tutorial2" parent="." unique_id=1478708114 instance=ExtResource("9_arvw2")]
 position = Vector2(88, 143)
 DialogueId = "Tutorial2"
+
+[node name="Trigger1" parent="." unique_id=907362404 instance=ExtResource("9_arvw2")]
+position = Vector2(172, 144.5)
+scale = Vector2(2.58, 4.6)
+DialogueId = "Trigger1"

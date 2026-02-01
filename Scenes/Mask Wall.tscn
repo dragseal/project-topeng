@@ -6,7 +6,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yg1dn"]
 
-[node name="Node2D" type="Node2D" unique_id=752288657]
+[node name="MaskWall" type="Node2D" unique_id=752288657]
 y_sort_enabled = true
 script = ExtResource("1_7wjbp")
 

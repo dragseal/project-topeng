@@ -130,6 +130,23 @@ namespace DialogueManagerRuntime
 	  }
 	}
 	
+	public void ShowGameOverScreen() 
+	{
+		var global = GetNode<Simpleton>("/root/Simpleton");
+		
+		if (!global.playerDead) 
+		{
+			global.playerDead = true;
+			
+			Error result = GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
+			
+			if (result != Error.Ok)
+			{
+				GD.PrintErr("Gagal memuat scene GameOver: " + result);
+			}
+		}
+	}
+	
 	public void OpenImage(string ImageName)
 	{
 		var objectImage = GD.Load<Texture2D>("res://Sprites/Items/"+ImageName+".png");
