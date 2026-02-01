@@ -1,6 +1,8 @@
 ~ start
 do PlayBGM("res://SFX/Interact.mp3")
+do OpenImage("mask")
 Picked up a [color=#FF0000]Cracked Mask[/color].
 Press [color=#FF0000] space [/color] to avoid the Red Objects!.
 do EnableMask()
+do CloseImage()
 => END

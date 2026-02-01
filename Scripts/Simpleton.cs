@@ -18,7 +18,7 @@ public partial class Simpleton : Node
 	public int playerRoom = 1;
 	public bool playerSpawned = false;
 	public bool playerDead = false;
-	public int playerHP = 3;
+	public int playerHP = 10;
 	
 	public HashSet<string> ActivatedTriggers = new HashSet<string>();
 	public HashSet<string> ItemInInventory = new HashSet<string>();
@@ -38,6 +38,6 @@ public partial class Simpleton : Node
 		playerDead = false;
 		 ActivatedTriggers.Clear(); 
 		ItemInInventory = new HashSet<string>();
-		playerHP = 3;
+		playerHP = 10;
 	}
 }

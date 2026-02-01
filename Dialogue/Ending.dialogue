@@ -1,5 +1,6 @@
 ~ start
 do PlayAmbience("res://BGM/Ambience.mp3")
+do ShowCG("res://Epilogue.png")
 Angin bertiup ke arah rumah, cukup kencang untuk membuka pintu ganda.
 Dari tempatku berdiri, aku bisa melihat bayangan anak itu, menatapku dengan mata merahnya.
 Ia mengangkat tangannya ke udara, melambai padaku, sebelum menghilang, diikuti oleh pintu yang menutup sendiri. 

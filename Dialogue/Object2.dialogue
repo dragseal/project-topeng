@@ -1,5 +1,6 @@
 ~ start
 do PlayBGM("res://SFX/Interact.mp3")
+do OpenImage("toy")
 Picked up a [color=#FF0000]Makeshift Plushie[/color].
 do PlayBGM("res://BGM/Reveal.mp3")
 You notice a child's bone in it.
@@ -17,6 +18,7 @@ PAKAI TOPENG [color=#FF0000] .
 Detektif: Sepertinya aku bisa menggunakan topeng itu untuk menghindarinya!
 Pakai [color=#FF0000]topeng[/color] untuk menghindarinya.
 do StopBGM()
+do CloseImage()
 do SpawnGhost(300, 150)
 do SpawnGhost(75, 100)
 => END

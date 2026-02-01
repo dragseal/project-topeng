@@ -1,6 +1,6 @@
 ~ start
 do PlayBGM("res://SFX/Interact.mp3")
-do OpenImage("testItem")
+do OpenImage("key")
 Picked up a [color=#FF0000]Bloody Key[/color].
 do CloseImage()
 => END
