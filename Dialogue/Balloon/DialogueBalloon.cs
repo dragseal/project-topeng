@@ -166,7 +166,8 @@ namespace DialogueManagerRuntime
 	public void EnableMask()
 	{
 		// Mencari node MaskController di dalam scene tree
-		var maskCtrl = GetTree().Root.FindChild("MaskController", true, false);
+		var MaskGlobal = GetNode<Node>("/root/MaskModeManager");
+		var maskCtrl = (Node)MaskGlobal.Get("ActiveMaskController");
 		
 		if (maskCtrl != null)
 		{

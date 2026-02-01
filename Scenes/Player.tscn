@@ -49,7 +49,7 @@ collision_mask = 40
 [node name="PlayerMarker" type="Node2D" parent="." unique_id=960968416]
 script = ExtResource("3_gntrk")
 
-[node name="MaskController" type="Node" parent="." unique_id=2032054131]
+[node name="Node" type="Node" parent="." unique_id=2032054131]
 script = ExtResource("4_dewec")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1077520884]
