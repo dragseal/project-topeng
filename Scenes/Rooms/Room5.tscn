@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dv2wky6612ad1" path="res://Sprites/BG/chair.png" id="9_5vy2w"]
 [ext_resource type="PackedScene" uid="uid://dkd685txyxsj" path="res://Scenes/Object.tscn" id="9_p31ru"]
 [ext_resource type="Texture2D" uid="uid://cyimmqyh0of2b" path="res://Sprites/BG/dool.png" id="10_5vy2w"]
+[ext_resource type="Texture2D" uid="uid://dyhob4amlapm" path="res://bg.png" id="11_of0xb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("2_khg3p")
@@ -118,3 +119,8 @@ z_index = -1
 position = Vector2(168, 62.500008)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("10_5vy2w")
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1256120012]
+visible = false
+position = Vector2(186.5, 83)
+texture = ExtResource("11_of0xb")

@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://fyakbiliif75" path="res://Sprites/BG/desk.png" id="9_syrkg"]
 [ext_resource type="Texture2D" uid="uid://cyimmqyh0of2b" path="res://Sprites/BG/dool.png" id="10_mcrqp"]
 [ext_resource type="PackedScene" uid="uid://iobetvm11ehc" path="res://Scenes/dialogue_trigger.tscn" id="10_ymg13"]
+[ext_resource type="Texture2D" uid="uid://dyhob4amlapm" path="res://bg.png" id="11_mcrqp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("2_cefv8")
@@ -78,7 +79,7 @@ DialogueId = "Trigger4"
 
 [node name="Desk" type="Sprite2D" parent="." unique_id=1056315515]
 z_index = -1
-position = Vector2(276, 102.000015)
+position = Vector2(276.5, 112.500015)
 scale = Vector2(0.205, 0.205)
 texture = ExtResource("9_syrkg")
 
@@ -87,3 +88,8 @@ z_index = -1
 position = Vector2(216.50002, 189.5)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("10_mcrqp")
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1855272206]
+position = Vector2(168.5, 115)
+scale = Vector2(-1, 1)
+texture = ExtResource("11_mcrqp")
