@@ -7,7 +7,6 @@ public partial class Bullet : CharacterBody2D
     public float _alpha = 1;
     public float timer = 0;
     //public Vector2 _velocity;
-    //public Vector2 Velocity { get; set; }
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
