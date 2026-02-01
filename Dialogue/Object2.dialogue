@@ -3,6 +3,17 @@ do PlayBGM("res://SFX/Interact.mp3")
 Picked up a [color=#FF0000]Makeshift Plushie[/color].
 do PlayBGM("res://BGM/Reveal.mp3")
 You notice a child's bone in it.
+Aku menghela napas melihat pemandangan mengerikan ini.
+Sahabat masa kecilku, satu-satunya orang yang menghabiskan waktu bersamaku di masa lalu, ditemukan dalam keadaan yang menyedihkan ini.Setelah sekian lama mencari kebenaran, akhirnya aku sampai pada sebuah kesimpulan.
+Aku akan membawa boneka kain itu bersama sisa-sisa kerangka sahabatku ke halaman depan rumah untuk menguburnya.
+Tapi sebelum itu
+Di ruang tamu tadi, detektif menemukan catatan usang dari penyelidik sebelumnya. Tulisan tangannya tergesa-gesa, tintanya pudar
+“Ia tidak menyerang.
+Ia menarik perhatian.
+Jika ia tahu kau sedang menatapnya—
+Ia akan mendekat.”
+Halaman terakhir hanya berisi satu kalimat panjang
+PAKAI TOPENG [color=#FF0000] .
 Detektif: Sepertinya aku bisa menggunakan topeng itu untuk menghindarinya!
 Pakai [color=#FF0000]topeng[/color] untuk menghindarinya.
 do StopBGM()
