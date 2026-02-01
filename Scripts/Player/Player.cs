@@ -195,8 +195,20 @@ public partial class Player : CharacterBody2D
 	
 	public void SetRedCollision(bool canCollide)
 	{
+		// 1. Ubah tabrakan fisik (agar tidak mentok saat jalan)
 		SetCollisionMaskValue(8, canCollide);
-		GD.Print(canCollide ? "Menabrak Merah" : "Tembus Merah");
+		SetCollisionMaskValue(9, canCollide);
+
+		// 2. Ubah deteksi damage pada Area2D
+		var area = GetNode<Area2D>("Area2D");
+		area.SetCollisionMaskValue(8, canCollide); 
+		if (area != null)
+		{
+			area.SetCollisionMaskValue(9, canCollide);
+		}
+
+
+		GD.Print(canCollide ? "Mode Normal: Semua Peluru Kena" : "Mode Mask: Peluru Merah Tembus");
 	}
 
 }

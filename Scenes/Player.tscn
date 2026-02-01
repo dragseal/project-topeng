@@ -53,7 +53,7 @@ script = ExtResource("4_dewec")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1077520884]
 collision_layer = 16
-collision_mask = 16
+collision_mask = 272
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1598989876]
 position = Vector2(0, 0.495)
