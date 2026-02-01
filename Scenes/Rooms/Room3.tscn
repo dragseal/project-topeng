@@ -38,6 +38,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_kdtvj")
 
 [node name="World" type="Node2D" unique_id=1434134610]
+scale = Vector2(2, 2)
 script = ExtResource("1_rj2n6")
 GhostScene = ExtResource("2_uxlch")
 
@@ -70,6 +71,7 @@ metadata/_edit_group_ = true
 [node name="Object" parent="." unique_id=752288657 instance=ExtResource("5_cefv8")]
 position = Vector2(62, 193)
 ObjectType = "mask"
+DialogueOnInteracted = "Object3"
 
 [node name="Marker1" type="Marker2D" parent="." unique_id=1419039189]
 position = Vector2(235, 175)

@@ -40,6 +40,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_kdtvj")
 
 [node name="World" type="Node2D" unique_id=1434134610]
+scale = Vector2(2, 2)
 script = ExtResource("1_uc76g")
 PlayerScene = ExtResource("2_x5lkd")
 GhostScene = ExtResource("3_arvw2")
@@ -67,6 +68,7 @@ metadata/_edit_group_ = true
 [node name="Object" parent="." unique_id=752288657 instance=ExtResource("5_kdtvj")]
 position = Vector2(65, 150)
 ObjectType = "merah"
+DialogueOnInteracted = "Object1"
 
 [node name="Marker1" type="Marker2D" parent="." unique_id=327531567]
 position = Vector2(247, 92)

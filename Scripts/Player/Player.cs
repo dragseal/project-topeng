@@ -41,25 +41,13 @@ public partial class Player : CharacterBody2D
 			var interactable = detectionArea.GetParent<Object>();
 			if (interactable != null && !interactable.Interacted)
 			{
-				if (interactable.ObjectType == "merah") {
-					global.merahTaken = true; 
-					interactable.Interacted = true;
-					var dialogue = GD.Load<Resource>("res://Dialogue/Object1.dialogue");
+				global.ItemInInventory.Add(interactable.ObjectType); 
+				interactable.Interacted = true;
+				var dialogue = GD.Load<Resource>("res://Dialogue/"+interactable.DialogueOnInteracted+".dialogue");
+				if (dialogue!=null){
 					DialogueManager.ShowDialogueBalloon(dialogue, "start");
-					interactable.QueueFree();
 				}
-				if (interactable.ObjectType == "toy") {
-					global.toyTaken = true; 
-					interactable.Interacted = true;
-					var dialogue = GD.Load<Resource>("res://Dialogue/Object2.dialogue");
-					DialogueManager.ShowDialogueBalloon(dialogue, "start");
-					interactable.QueueFree();
-				}
-				if (interactable.ObjectType == "mask") {
-					global.maskTaken = true; 
-					interactable.Interacted = true;
-					var dialogue = GD.Load<Resource>("res://Dialogue/Object3.dialogue");
-					DialogueManager.ShowDialogueBalloon(dialogue, "start");
+				if (!interactable.IsPersist){	
 					interactable.QueueFree();
 				}
 			}
@@ -111,11 +99,11 @@ public partial class Player : CharacterBody2D
 				{
 					AudioManager.Instance.PlayBGM("res://SFX/Door.mp3");
 					AudioManager.Instance.PlayAmbience("res://BGM/Ambience.mp3");
-					if (hitDoor.RoomNumber == 1 && !global.merahTaken && !_isTalking) {
+					if (hitDoor.RoomNumber == 1 && !global.ItemInInventory.Contains("merah") && !_isTalking) {
 						var dialogue = GD.Load<Resource>("res://Dialogue/Locked1.dialogue");
 						DialogueManager.ShowDialogueBalloon(dialogue, "start");
 					} 
-					if (hitDoor.RoomNumber == 0 || hitDoor.RoomNumber == 1 && global.merahTaken) {
+					if (hitDoor.RoomNumber == 0 || hitDoor.RoomNumber == 1 && global.ItemInInventory.Contains("merah")) {
 						// Using 'NextRoom' as per your export
 						var _nextRoom = GD.Load<PackedScene>(hitDoor.NextRoom).Instantiate();
 						GetTree().Root.AddChild(_nextRoom);
@@ -124,11 +112,11 @@ public partial class Player : CharacterBody2D
 						_nextRoom.CallDeferred(Node.MethodName.AddChild, this);
 						GetTree().CurrentScene.QueueFree();
 						GetTree().CurrentScene = _nextRoom;
-						this.GlobalPosition = new Vector2(hitDoor.SpawnX, hitDoor.SpawnY).Round();
+						this.Position = new Vector2(hitDoor.SpawnX, hitDoor.SpawnY).Round();
 						return; // STOP everything so we don't load the room twice
 					}
 					if (hitDoor.RoomNumber == -1 && !_isTalking) {
-						if (global.maskTaken && global.toyTaken) // ENDING HERE
+						if (global.ItemInInventory.Contains("mask") && global.ItemInInventory.Contains("toy")) // ENDING HERE
 						{
 							var dialogue = GD.Load<Resource>("res://Dialogue/Ending.dialogue");
 							DialogueManager.ShowDialogueBalloon(dialogue, "start");
