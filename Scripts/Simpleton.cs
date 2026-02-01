@@ -4,6 +4,17 @@ using System.Collections.Generic;
 
 public partial class Simpleton : Node
 {
+	public static Simpleton instance;
+	
+	public static bool isPlayerDead{
+		get{
+			return instance.playerDead;
+		}
+		set{
+			instance.playerDead = value;
+		}
+	}
+	
 	public int playerRoom = 1;
 	public bool playerSpawned = false;
 	public bool playerDead = false;
@@ -11,6 +22,10 @@ public partial class Simpleton : Node
 	
 	public HashSet<string> ActivatedTriggers = new HashSet<string>();
 	public HashSet<string> ItemInInventory = new HashSet<string>();
+	
+	public override void _EnterTree(){
+		instance = this;
+	}
 
 	public void ResetStats() {
 		playerRoom = 1;

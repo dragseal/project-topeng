@@ -10,6 +10,13 @@ public partial class AudioManager : Node
 
 	public override void _Ready()
 	{
+		Init();
+	}
+	
+	public void Init(){
+		if (Instance!=null){
+			return;
+		}
 		// Setup Singleton
 		Instance = this;
 
@@ -22,11 +29,11 @@ public partial class AudioManager : Node
 		// Atur agar BGM tidak terpengaruh pause game
 		_bgmPlayer.ProcessMode = ProcessModeEnum.Always;
 		_ambiencePlayer.ProcessMode = ProcessModeEnum.Always;
-	
 	}
 
 	public void PlayAmbience(string streamPath)
 	{
+		Init();
 		AudioStream ambience = GD.Load<AudioStream>(streamPath);
 		
 		if (_ambiencePlayer.Stream == ambience && _ambiencePlayer.Playing) return;
@@ -38,6 +45,7 @@ public partial class AudioManager : Node
 
 	public void PlayBGM(string streamPath)
 	{
+		Init();
 		AudioStream music = GD.Load<AudioStream>(streamPath);
 		
 		// Jangan restart jika lagu yang sama sedang diputar
@@ -49,11 +57,13 @@ public partial class AudioManager : Node
 
 	public void StopBGM()
 	{
+		Init();
 		_bgmPlayer.Stop();
 	}
 
 	public void SetVolume(float volumeDb)
 	{
+		Init();
 		_bgmPlayer.VolumeDb = volumeDb;
 	}
 }

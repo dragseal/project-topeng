@@ -41,8 +41,12 @@ public partial class Player : CharacterBody2D
 				global.ItemInInventory.Add(interactable.ObjectType); 
 				interactable.Interacted = true;
 				var dialogue = GD.Load<Resource>("res://Dialogue/"+interactable.DialogueOnInteracted+".dialogue");
-				DialogueManager.ShowDialogueBalloon(dialogue, "start");
-				interactable.QueueFree();
+				if (dialogue!=null){
+					DialogueManager.ShowDialogueBalloon(dialogue, "start");
+				}
+				if (!interactable.IsPersist){	
+					interactable.QueueFree();
+				}
 			}
 		}
 		Vector2 direction = Vector2.Zero;
