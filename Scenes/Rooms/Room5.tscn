@@ -90,3 +90,4 @@ scale = Vector2(1, 7.7)
 position = Vector2(62, 78.5)
 ObjectType = "mask"
 DialogueOnInteracted = "Object3"
+ImageOnInteracted = "mask"

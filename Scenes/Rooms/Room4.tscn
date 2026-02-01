@@ -64,6 +64,7 @@ metadata/_edit_group_ = true
 position = Vector2(259, 77)
 ObjectType = "toy"
 DialogueOnInteracted = "Object2"
+ImageOnInteracted = "toy"
 
 [node name="Marker1" type="Marker2D" parent="." unique_id=1018111972]
 position = Vector2(103, 36)
