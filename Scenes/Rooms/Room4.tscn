@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://djqfsynagnc0i" path="res://Scripts/MarkerSystem/marker.gd" id="6_hsm5k"]
 [ext_resource type="Texture2D" uid="uid://cyimmqyh0of2b" path="res://Sprites/BG/dool.png" id="9_vxehh"]
 [ext_resource type="Texture2D" uid="uid://dv2wky6612ad1" path="res://Sprites/BG/chair.png" id="10_avjmu"]
+[ext_resource type="Texture2D" uid="uid://dyhob4amlapm" path="res://bg.png" id="11_hi4bk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("2_ldur7")
@@ -87,3 +88,8 @@ z_index = -1
 position = Vector2(278, 195)
 scale = Vector2(0.19, 0.18103774)
 texture = ExtResource("10_avjmu")
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=169768633]
+visible = false
+position = Vector2(142, 29.5)
+texture = ExtResource("11_hi4bk")
