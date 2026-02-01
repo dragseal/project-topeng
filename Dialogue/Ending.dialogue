@@ -1,16 +1,10 @@
 ~ start
 do PlayAmbience("res://BGM/Ambience.mp3")
-do ShowCG("res://Level1.png")
-Testes panel 1
-do ShowCG("res://Level2.png")
-Testes panel 2
-do PlayBGM("res://BGM/Epilogue.mp3")
-do ShowCG("res://Level3.png")
-Testes panel 3
-do ShowCG("res://Level4.png")
-Testes panel 4
-Panel 4 lanjutan, buat ngetess. Yeay
-STOPPP
+Angin bertiup ke arah rumah, cukup kencang untuk membuka pintu ganda.
+Dari tempatku berdiri, aku bisa melihat bayangan anak itu, menatapku dengan mata merahnya.
+Ia mengangkat tangannya ke udara, melambai padaku, sebelum menghilang, diikuti oleh pintu yang menutup sendiri. 
+Tampaknya ia akhirnya bisa beristirahat dengan tenang.
+Dengan senyum di wajahku, aku berjalan menuju mobilku, meninggalkan masa lalu di belakangku, mengetahui bahwa semuanya telah terselesaikan.
 do HideCG()
 do StopBGM()
 do ShowGameOverScreen()
