@@ -9,7 +9,6 @@ public partial class Bullet : CharacterBody2D
 	
 	// Tambahkan variabel untuk menyimpan status warna
 	public bool IsRed = false;
-
 	public override void _Ready()
 	{
 		_sprite = GetNode<Sprite2D>("Sprite2D");
@@ -53,4 +52,5 @@ public partial class Bullet : CharacterBody2D
 		
 		MoveAndSlide();
 	}
+
 }
