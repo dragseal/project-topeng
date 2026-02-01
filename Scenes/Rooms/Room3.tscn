@@ -6,9 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cx3tqhvuewykc" path="res://Scenes/Ghost.tscn" id="2_uxlch"]
 [ext_resource type="Texture2D" uid="uid://djgt4u45uu2uj" path="res://Sprites/TileSet/floor.png" id="3_u8o5a"]
 [ext_resource type="PackedScene" uid="uid://bcrtf5bdnaoh7" path="res://Scenes/Door.tscn" id="4_rj2n6"]
-[ext_resource type="PackedScene" uid="uid://dkd685txyxsj" path="res://Scenes/Object.tscn" id="5_cefv8"]
 [ext_resource type="Script" uid="uid://djqfsynagnc0i" path="res://Scripts/MarkerSystem/marker.gd" id="6_u8o5a"]
-[ext_resource type="PackedScene" uid="uid://dd6l3hp2yik3p" path="res://Scenes/Mask Wall.tscn" id="9_syrkg"]
 [ext_resource type="PackedScene" uid="uid://iobetvm11ehc" path="res://Scenes/dialogue_trigger.tscn" id="10_ymg13"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
@@ -62,11 +60,6 @@ SpawnX = 58.0
 SpawnY = 120.0
 metadata/_edit_group_ = true
 
-[node name="Object" parent="." unique_id=752288657 instance=ExtResource("5_cefv8")]
-position = Vector2(62, 193)
-ObjectType = "mask"
-DialogueOnInteracted = "Object3"
-
 [node name="Marker1" type="Marker2D" parent="." unique_id=1419039189]
 position = Vector2(235, 175)
 script = ExtResource("6_u8o5a")
@@ -74,10 +67,6 @@ script = ExtResource("6_u8o5a")
 [node name="Marker2" type="Marker2D" parent="." unique_id=1309179154]
 position = Vector2(75, 79)
 script = ExtResource("6_u8o5a")
-
-[node name="MaskWall" parent="." unique_id=2079293777 instance=ExtResource("9_syrkg")]
-position = Vector2(158, 151)
-scale = Vector2(1, 7.7199984)
 
 [node name="Trigger4" parent="." unique_id=907362404 instance=ExtResource("10_ymg13")]
 position = Vector2(87, 101.5)

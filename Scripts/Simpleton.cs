@@ -26,6 +26,11 @@ public partial class Simpleton : Node
 	public override void _EnterTree(){
 		instance = this;
 	}
+	
+	public bool isHasItem (string itemName)
+	{
+		return ItemInInventory.Contains(itemName);
+	}
 
 	public void ResetStats() {
 		playerRoom = 1;

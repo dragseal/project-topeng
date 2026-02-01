@@ -4,6 +4,8 @@ var IsCurrentMaskOn : bool = false
 
 signal OnMaskChanged
 
+var ActiveMaskController : MaskController;
+
 func ToggleMaskMode() -> void :
 	IsCurrentMaskOn = !IsCurrentMaskOn
 	OnMaskChanged.emit()
@@ -16,6 +18,7 @@ func ToggleMaskMode() -> void :
 		AudioManager.PlayAmbience("res://BGM/Ambience.mp3")
 		
 	print("Mask Status: ", IsCurrentMaskOn)
+
 
 func _ready() -> void:
 	# Pastikan AudioManager sudah terdaftar di Project Settings -> Autoload

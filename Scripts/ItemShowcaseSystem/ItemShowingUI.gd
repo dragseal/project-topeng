@@ -39,6 +39,8 @@ func hide() -> void:
 	ItemImage.position = ShownPosition
 
 	_kill_tween()
+	if get_tree() == null:
+		return
 	_tween = get_tree().create_tween()
 	_tween.tween_property(
 		ItemImage,

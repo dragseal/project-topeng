@@ -4,7 +4,12 @@ class_name MaskController
 var is_enabled: bool = false
 
 func _ready() -> void:
-	set_process(false)
+	MaskModeManager.ActiveMaskController = self
+	if (!Simpleton.isHasItem("mask")):
+		set_process(false)
+	else:
+		enable_mask_system()
+		
 	MaskModeManager.OnMaskChanged.connect(_on_mask_changed)
 
 func enable_mask_system() -> void:

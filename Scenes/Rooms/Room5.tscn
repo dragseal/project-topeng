@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://djgt4u45uu2uj" path="res://Sprites/TileSet/floor.png" id="3_aycly"]
 [ext_resource type="PackedScene" uid="uid://bcrtf5bdnaoh7" path="res://Scenes/Door.tscn" id="4_xg3cn"]
 [ext_resource type="Script" uid="uid://djqfsynagnc0i" path="res://Scripts/MarkerSystem/marker.gd" id="5_khg3p"]
+[ext_resource type="PackedScene" uid="uid://dd6l3hp2yik3p" path="res://Scenes/Mask Wall.tscn" id="7_xg3cn"]
+[ext_resource type="PackedScene" uid="uid://dkd685txyxsj" path="res://Scenes/Object.tscn" id="9_p31ru"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("2_khg3p")
@@ -75,3 +77,16 @@ script = ExtResource("5_khg3p")
 [node name="Marker2" type="Marker2D" parent="." unique_id=1040849150]
 position = Vector2(70, 118)
 script = ExtResource("5_khg3p")
+
+[node name="MaskWall" parent="." unique_id=752288657 instance=ExtResource("7_xg3cn")]
+position = Vector2(115, 119.5)
+scale = Vector2(1, 7.4)
+
+[node name="MaskWall2" parent="." unique_id=2042538973 instance=ExtResource("7_xg3cn")]
+position = Vector2(215.5, 117.5)
+scale = Vector2(1, 7.7)
+
+[node name="Object" parent="." unique_id=1192645820 instance=ExtResource("9_p31ru")]
+position = Vector2(62, 78.5)
+ObjectType = "mask"
+DialogueOnInteracted = "Object3"

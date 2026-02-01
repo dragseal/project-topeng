@@ -1,0 +1,6 @@
+~ start
+Detektif: Ampuni hambaa!
+do SpawnGhost(150, 150)
+do SpawnGhost(100, 400)
+do SpawnGhost(600, 250)
+=> END

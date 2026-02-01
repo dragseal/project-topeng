@@ -10,5 +10,7 @@ do PlayBGM("res://SFX/SmallLaugh.mp3")
 Lalu terdengar suara. Tawa kecil yang teredam, seperti anak kecil yang takut ketahuan. Senter detektif bergetar. Bayangan di dinding membentang pada sudut yang aneh. Dan di ujung koridor, ia melihatnya untuk pertama kalinya. Sosok kecil berdiri diam, wajahnya tertutup bayangan. Naluri detektif menyuruhnya untuk melihat lebih dekat.
 Detektif: ...kau di sini, kan??
 Detektif: Tenang... aku datang untuk menutup kasusmu.
+Avoid [color=#FF0000] The Bullet [/color] or DIE!!!
+do SpawnGhost(300, 150)
 
 => END!
