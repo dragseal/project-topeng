@@ -170,9 +170,7 @@ public partial class Player : CharacterBody2D
 		}
 		else 
 		{
-			// Hitung intensitas merah berdasarkan sisa HP
-			// Asumsi Max HP adalah 5 (berdasarkan logika > 4 Anda)
-			float maxHP = 5.0f;
+			float maxHP = 10.0f;
 			float healthPercent = (float)global.playerHP / maxHP;
 
 			// Semakin rendah healthPercent, semakin rendah nilai G dan B (menjadi merah)

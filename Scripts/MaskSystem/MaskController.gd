@@ -21,16 +21,17 @@ func enable_mask_system() -> void:
 	print("Mask System Enabled!")
 
 func spawn_once():
-	var persistent_scene: PackedScene = load("res://Scripts/MaskSystem/mask_system_ui.tscn")
-	if not persistent_scene:
-		push_error("Persistent scene not assigned")
-		return
+	var persistent_scene = load("res://Scripts/MaskSystem/mask_system_ui.tscn")
+	if not persistent_scene: return
 		
 	var uiInstance = persistent_scene.instantiate()
-	var world := get_tree().root.get_node_or_null("World")
-	if world:
-		world.add_child(uiInstance)
-		print("UI instantiated")
+	
+	# Gunakan CanvasLayer sebagai parent agar UI selalu di depan
+	var canvas_layer = CanvasLayer.new()
+	canvas_layer.layer = 100 # Angka tinggi agar paling depan
+	get_tree().root.add_child(canvas_layer)
+	canvas_layer.add_child(uiInstance)
+
 
 func _on_mask_changed() -> void:
 	# Pastikan Player berada di dalam group "Player" di Editor

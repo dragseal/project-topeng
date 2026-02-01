@@ -25,6 +25,7 @@ offset_right = 1000.0
 offset_bottom = 5.0
 texture = SubResource("GradientTexture2D_tlmo5")
 expand_mode = 1
+stretch_mode = 6
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=720170893]
 layout_mode = 1

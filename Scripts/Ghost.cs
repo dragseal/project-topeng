@@ -6,7 +6,7 @@ public partial class Ghost : Area2D
 	[Export] public float Speed;
 	Vector2 Position;
 	[Export] public float Amplitude = 20.0f;
-	[Export] public float Frequency = 2.0f;
+	[Export] public float Frequency = 4.0f;
 	private float _startY;
 	private double _time;
 	private Sprite2D childNode;
