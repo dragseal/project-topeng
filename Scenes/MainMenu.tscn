@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://crc3dejb8dt2a"]
+
+[ext_resource type="Script" uid="uid://3vqisky58jth" path="res://Scenes/MainMenu.cs" id="1_tt5f1"]
+[ext_resource type="AudioStream" uid="uid://dsnxigiuvn5t3" path="res://BGM/Main Menu.mp3" id="2_853f1"]
+
+[node name="MainMenu" type="Control" unique_id=1002242408 node_paths=PackedStringArray("playBtn", "exitBtn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tt5f1")
+FirstLevelPath = "res://Scenes/Rooms/Room1.tscn"
+playBtn = NodePath("MarginContainer/VBoxContainer/PlayButton")
+exitBtn = NodePath("MarginContainer/VBoxContainer/ExitButton")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2109798797]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_bottom = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=398278149]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=187104833]
+layout_mode = 2
+text = "Play"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=369677323]
+layout_mode = 2
+text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=138287486]
+stream = ExtResource("2_853f1")
+autoplay = true

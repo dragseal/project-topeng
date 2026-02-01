@@ -1,10 +1,14 @@
 [gd_scene format=4 uid="uid://dedsosyostgb5"]
 
+[ext_resource type="Script" uid="uid://cwb5h486avvjo" path="res://Scripts/World.cs" id="1_7a7y1"]
 [ext_resource type="PackedScene" uid="uid://gysa1isg7hy6" path="res://Scenes/Menu.tscn" id="1_cuhup"]
 [ext_resource type="Texture2D" uid="uid://hf5awtrm3u0m" path="res://Sprites/TileSet/wall.png" id="3_ut3n5"]
 [ext_resource type="Texture2D" uid="uid://djgt4u45uu2uj" path="res://Sprites/TileSet/floor.png" id="4_7a7y1"]
 [ext_resource type="PackedScene" uid="uid://bcrtf5bdnaoh7" path="res://Scenes/Door.tscn" id="5_cxadd"]
 [ext_resource type="Script" uid="uid://djqfsynagnc0i" path="res://Scripts/MarkerSystem/marker.gd" id="5_momfn"]
+[ext_resource type="PackedScene" uid="uid://dd6l3hp2yik3p" path="res://Scenes/Mask Wall.tscn" id="6_cuhup"]
+[ext_resource type="PackedScene" uid="uid://dkd685txyxsj" path="res://Scenes/Object.tscn" id="7_0lgib"]
+[ext_resource type="PackedScene" uid="uid://iobetvm11ehc" path="res://Scenes/dialogue_trigger.tscn" id="8_ut3n5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("3_ut3n5")
@@ -35,6 +39,7 @@ sources/0 = SubResource("TileSetAtlasSource_kdtvj")
 
 [node name="World" type="Node2D" unique_id=1434134610]
 scale = Vector2(2, 2)
+script = ExtResource("1_7a7y1")
 
 [node name="CanvasLayer" parent="." unique_id=872002648 instance=ExtResource("1_cuhup")]
 
@@ -76,3 +81,24 @@ script = ExtResource("5_momfn")
 [node name="Marker2" type="Marker2D" parent="." unique_id=1979302004]
 position = Vector2(79, 135)
 script = ExtResource("5_momfn")
+
+[node name="MaskWall1" parent="." unique_id=752288657 instance=ExtResource("6_cuhup")]
+position = Vector2(144, 129.5)
+scale = Vector2(1, 4.7199993)
+
+[node name="Node2D" parent="." unique_id=417339721 instance=ExtResource("6_cuhup")]
+position = Vector2(230, 130)
+scale = Vector2(1, 4.7799997)
+
+[node name="Objects" parent="." unique_id=1238209285 instance=ExtResource("7_0lgib")]
+position = Vector2(183, 133)
+
+[node name="Trigger2" parent="." unique_id=907362404 instance=ExtResource("8_ut3n5")]
+position = Vector2(87.00001, 93.5)
+scale = Vector2(3.84, 1)
+DialogueId = "Trigger2"
+
+[node name="Trigger3" parent="." unique_id=1450686150 instance=ExtResource("8_ut3n5")]
+position = Vector2(91, 136.5)
+scale = Vector2(3.6848056, -1.6835309)
+DialogueId = "Trigger3"

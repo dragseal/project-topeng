@@ -60,13 +60,6 @@ SpawnX = 266.0
 SpawnY = 133.0
 metadata/_edit_group_ = true
 
-[node name="Door5" parent="." unique_id=2046352494 instance=ExtResource("4_dpc2f")]
-position = Vector2(50, 178)
-NextRoom = "res://Scenes/Rooms/Room5.tscn"
-SpawnX = 274.0
-SpawnY = 120.0
-metadata/_edit_group_ = true
-
 [node name="Object" parent="." unique_id=752288657 instance=ExtResource("5_ldur7")]
 position = Vector2(259, 77)
 ObjectType = "toy"

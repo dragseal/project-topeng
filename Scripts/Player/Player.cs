@@ -16,18 +16,20 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
 	{
+		AddToGroup("Player");
 		var area = GetNode<Area2D>("Area2D");
 		area.BodyEntered += OnBodyEntered;
 		
 		_shapeCast = GetNode<ShapeCast2D>("ShapeCast2D");
 	}
+	
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		_isTalking = GetTree().GetNodesInGroup("DialogueBalloon").Count > 0;
 		// Dynamically get the Area2D of Object1
 		var detectionArea = GetNodeOrNull<Area2D>("../Object/Area2D");
 		var global = GetNode<Simpleton>("/root/Simpleton");
-
 		if (detectionArea != null &&
 				detectionArea.OverlapsBody(this) &&
 				Input.IsActionJustPressed("interactKey") &&
@@ -44,6 +46,7 @@ public partial class Player : CharacterBody2D
 				if (dialogue!=null){
 					DialogueManager.ShowDialogueBalloon(dialogue, "start");
 				}
+	
 				if (!interactable.IsPersist){	
 					interactable.QueueFree();
 				}
@@ -162,6 +165,7 @@ public partial class Player : CharacterBody2D
 
 		if (global.playerHP <= 0) 
 		{
+			AudioManager.Instance.PlayAmbience("res://SFX/Jumpscare.mp3");
 			over.ShowGameOverScreen();
 		}
 		else 
@@ -188,6 +192,24 @@ public partial class Player : CharacterBody2D
 		sprite.Modulate = new Color(10, 0, 0); // Merah menyala (HDR strength)
 		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
 		sprite.Modulate = originalColor;
+	}
+	
+	public void SetRedCollision(bool canCollide)
+	{
+		// 1. Ubah tabrakan fisik (agar tidak mentok saat jalan)
+		SetCollisionMaskValue(8, canCollide);
+		SetCollisionMaskValue(9, canCollide);
+
+		// 2. Ubah deteksi damage pada Area2D
+		var area = GetNode<Area2D>("Area2D");
+		area.SetCollisionMaskValue(8, canCollide); 
+		if (area != null)
+		{
+			area.SetCollisionMaskValue(9, canCollide);
+		}
+
+
+		GD.Print(canCollide ? "Mode Normal: Semua Peluru Kena" : "Mode Mask: Peluru Merah Tembus");
 	}
 
 }

@@ -1,16 +1,32 @@
 ~ start
 do PlayAmbience("res://BGM/Ambience.mp3")
-do ShowCG("res://Level1.png")
-Testes panel 1
-do ShowCG("res://Level2.png")
-Testes panel 2
 do PlayBGM("res://BGM/Prologue.mp3")
+do ShowCG("res://Level1.png")
+Hujan turun pelan malam itu, membasahi jalanan kosong yang hanya diterangi lampu mobilku. 
+Sudah dua puluh tahun sejak kejadian itu… tapi ingatannya masih terasa seperti kemarin.
+do ShowCG("res://Level2.png")
+Di ujung jalan, akhirnya aku melihatnya lagi.
+Rumah tua yang ditinggalkan. 
+Tempat terakhir sahabat masa kecilku terlihat hidup.
 do ShowCG("res://Level3.png")
-Testes panel 3
+Kasusnya tak pernah terpecahkan. 
+Tubuhnya tak pernah ditemukan. 
+Dan pelakunya… menghilang begitu saja.
 do ShowCG("res://Level4.png")
-Testes panel 4
-Panel 4 lanjutan, buat ngetess. Yeay
-STOPPP
+Orang-orang bilang rumah ini terkutuk. Tak ada yang berani mendekat sejak malam itu. 
+Tapi aku tidak datang untuk cerita hantu.
+do ShowCG("res://Level5.png")
+Aku datang untuk jawaban.
+Gerbang berkarat itu berdiri sedikit terbuka, seolah menungguku masuk. 
+Angin malam berdesir pelan, membawa bau kayu lapuk dan tanah basah.
+do ShowCG("res://Level6.png")
+Aku menarik napas dalam.
+Apa pun yang terjadi dua puluh tahun lalu… semuanya berawal dari rumah ini.
+Dan malam ini, aku akan masuk.
+
 do HideCG()
 do StopBGM()
+Detektif : …masih sama
+Detektif : Dua puluh tahun, dan tidak ada yang berani masuk.
+Tekan [color=#FF0000]W/A/S/D atau Arrow Keys[/color] untuk berjalan.
 => END

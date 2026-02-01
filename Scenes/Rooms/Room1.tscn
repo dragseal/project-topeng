@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://djgt4u45uu2uj" path="res://Sprites/TileSet/floor.png" id="4_x5lkd"]
 [ext_resource type="PackedScene" uid="uid://dkd685txyxsj" path="res://Scenes/Object.tscn" id="5_kdtvj"]
 [ext_resource type="PackedScene" uid="uid://bcrtf5bdnaoh7" path="res://Scenes/Door.tscn" id="5_uc76g"]
+[ext_resource type="PackedScene" uid="uid://iobetvm11ehc" path="res://Scenes/dialogue_trigger.tscn" id="9_arvw2"]
 [ext_resource type="Script" uid="uid://djqfsynagnc0i" path="res://Scripts/MarkerSystem/marker.gd" id="10_tlmo5"]
 [ext_resource type="Script" uid="uid://cejadx0irxywd" path="res://Scenes/Rooms/PrologueTrigger.cs" id="11_y7b8n"]
 
@@ -68,6 +69,7 @@ metadata/_edit_group_ = true
 position = Vector2(65, 150)
 ObjectType = "merah"
 DialogueOnInteracted = "Object1"
+ImageOnInteracted = "testItem"
 
 [node name="Marker1" type="Marker2D" parent="." unique_id=327531567]
 position = Vector2(247, 92)
@@ -76,3 +78,12 @@ script = ExtResource("10_tlmo5")
 [node name="Prologue" type="Node2D" parent="." unique_id=264936085]
 script = ExtResource("11_y7b8n")
 DialogueId = "Prologue"
+
+[node name="Tutorial2" parent="." unique_id=1478708114 instance=ExtResource("9_arvw2")]
+position = Vector2(88, 143)
+DialogueId = "Tutorial2"
+
+[node name="Trigger1" parent="." unique_id=907362404 instance=ExtResource("9_arvw2")]
+position = Vector2(172, 144.5)
+scale = Vector2(2.58, 4.6)
+DialogueId = "Trigger1"

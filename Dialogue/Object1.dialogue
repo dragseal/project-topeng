@@ -1,5 +1,8 @@
 ~ start
 do PlayBGM("res://SFX/Interact.mp3")
+do OpenImage("testItem")
 Picked up a [color=#FF0000]Bloody Key[/color].
+do CloseImage()
 do SpawnGhost(300, 150)
+Avoid [color=#FF0000] The Bullet [/color] or DIE!!!
 => END

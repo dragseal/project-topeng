@@ -44,8 +44,8 @@ func hide() -> void:
 		ItemImage,
 		"position",
 		HidePosition,
-		1
-	).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+		3
+	).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 	_tween.finished.connect(_on_hide_finished)
 

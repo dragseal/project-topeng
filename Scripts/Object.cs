@@ -5,6 +5,7 @@ public partial class Object : Node2D
 {
 	[Export] public string ObjectType;
 	[Export] public string DialogueOnInteracted;
+	[Export] public string ImageOnInteracted;
 	[Export] public bool IsPersist;
 	public bool Interacted = false;
 

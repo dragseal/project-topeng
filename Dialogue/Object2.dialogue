@@ -5,4 +5,5 @@ do PlayBGM("res://BGM/Reveal.mp3")
 You notice a child's bone in it.
 do StopBGM()
 do SpawnGhost(300, 150)
+do SpawnGhost(100, 100)
 => END

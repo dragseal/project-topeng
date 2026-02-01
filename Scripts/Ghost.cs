@@ -53,7 +53,7 @@ public partial class Ghost : Area2D
 	{
 		AudioManager.Instance.PlayBGM("res://SFX/Projectile land enemy.wav");
 		var instance = scene.Instantiate<Bullet>();
-        var world = GetNode<Node2D>("/root/World");
+		var world = GetNode<Node2D>("/root/World");
 		world.AddChild(instance);
 		instance.GlobalPosition = pos;
 		instance.LookAt(target);

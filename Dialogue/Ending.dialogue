@@ -13,4 +13,5 @@ Panel 4 lanjutan, buat ngetess. Yeay
 STOPPP
 do HideCG()
 do StopBGM()
+do ShowGameOverScreen()
 => END

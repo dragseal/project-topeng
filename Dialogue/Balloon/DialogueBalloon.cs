@@ -129,7 +129,55 @@ namespace DialogueManagerRuntime
 		Start();
 	  }
 	}
+	
+	public void ShowGameOverScreen() 
+	{
+		var global = GetNode<Simpleton>("/root/Simpleton");
+		
+		if (!global.playerDead) 
+		{
+			global.playerDead = true;
+			
+			Error result = GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
+			
+			if (result != Error.Ok)
+			{
+				GD.PrintErr("Gagal memuat scene GameOver: " + result);
+			}
+		}
+	}
+	
+	public void OpenImage(string ImageName)
+	{
+		var objectImage = GD.Load<Texture2D>("res://Sprites/Items/"+ImageName+".png");
+				GD.Print("Image terbaca ="+ objectImage);
+				if (objectImage!=null){
+					GD.Print("Image terbaca yeay="+ objectImage);
+					var globalImage = GetNode<Node>("/root/ItemShowingManager");
+					globalImage.Call("_show_item",ImageName);
+				}
+	}
+	public void CloseImage()
+	{
+		var globalImage = GetNode<Node>("/root/ItemShowingManager");
+		globalImage.Call("_hide_item");	
+	}
 
+	public void EnableMask()
+	{
+		// Mencari node MaskController di dalam scene tree
+		var maskCtrl = GetTree().Root.FindChild("MaskController", true, false);
+		
+		if (maskCtrl != null)
+		{
+			maskCtrl.Call("enable_mask_system");
+			GD.Print("MaskController diaktifkan via Dialog");
+		}
+		else
+		{
+			GD.PrintErr("MaskController tidak ditemukan! Pastikan sudah ada di Scene atau Autoload.");
+		}
+	}
 
 	public override void _ExitTree()
 	{

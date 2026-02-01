@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://iobetvm11ehc"]
 
-[ext_resource type="Script" path="res://Scenes/Rooms/DialogueTrigger.cs" id="1_e2jh5"]
+[ext_resource type="Script" uid="uid://nix6fvesse0p" path="res://Scenes/Rooms/DialogueTrigger.cs" id="1_e2jh5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54nc4"]
 radius = 13.97

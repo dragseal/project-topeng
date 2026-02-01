@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dgs5dggh5b7hm"
+path="res://.godot/imported/Trigger4.dialogue-99a8038bdcb77acce339907c2b4f2cec.tres"
+
+[deps]
+
+source_file="res://Dialogue/Trigger4.dialogue"
+dest_files=["res://.godot/imported/Trigger4.dialogue-99a8038bdcb77acce339907c2b4f2cec.tres"]
+
+[params]
+
+defaults=true
