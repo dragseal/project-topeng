@@ -2,4 +2,5 @@
 do PlayBGM("res://SFX/Interact.mp3")
 Picked up a [color=#FF0000]Bloody Key[/color].
 do SpawnGhost(300, 150)
+Avoid [color=#FF0000] The Bullet [/color] or DIE!!!
 => END

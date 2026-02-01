@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bcrtf5bdnaoh7" path="res://Scenes/Door.tscn" id="4_rj2n6"]
 [ext_resource type="PackedScene" uid="uid://dkd685txyxsj" path="res://Scenes/Object.tscn" id="5_cefv8"]
 [ext_resource type="Script" uid="uid://djqfsynagnc0i" path="res://Scripts/MarkerSystem/marker.gd" id="6_u8o5a"]
+[ext_resource type="PackedScene" uid="uid://dd6l3hp2yik3p" path="res://Scenes/Mask Wall.tscn" id="9_syrkg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("2_cefv8")
@@ -77,3 +78,7 @@ script = ExtResource("6_u8o5a")
 [node name="Marker2" type="Marker2D" parent="." unique_id=1309179154]
 position = Vector2(75, 79)
 script = ExtResource("6_u8o5a")
+
+[node name="Node2D" parent="." unique_id=2079293777 instance=ExtResource("9_syrkg")]
+position = Vector2(158, 151)
+scale = Vector2(1, 7.7199984)

@@ -16,11 +16,14 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
 	{
+		AddToGroup("Player");
 		var area = GetNode<Area2D>("Area2D");
 		area.BodyEntered += OnBodyEntered;
 		
 		_shapeCast = GetNode<ShapeCast2D>("ShapeCast2D");
 	}
+	
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		_isTalking = GetTree().GetNodesInGroup("DialogueBalloon").Count > 0;
@@ -200,6 +203,12 @@ public partial class Player : CharacterBody2D
 		sprite.Modulate = new Color(10, 0, 0); // Merah menyala (HDR strength)
 		await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
 		sprite.Modulate = originalColor;
+	}
+	
+	public void SetRedCollision(bool canCollide)
+	{
+		SetCollisionMaskValue(8, canCollide);
+		GD.Print(canCollide ? "Menabrak Merah" : "Tembus Merah");
 	}
 
 }

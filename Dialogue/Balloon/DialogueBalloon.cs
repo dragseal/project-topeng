@@ -130,6 +130,21 @@ namespace DialogueManagerRuntime
 	  }
 	}
 
+	public void EnableMask()
+	{
+		// Mencari node MaskController di dalam scene tree
+		var maskCtrl = GetTree().Root.FindChild("MaskController", true, false);
+		
+		if (maskCtrl != null)
+		{
+			maskCtrl.Call("enable_mask_system");
+			GD.Print("MaskController diaktifkan via Dialog");
+		}
+		else
+		{
+			GD.PrintErr("MaskController tidak ditemukan! Pastikan sudah ada di Scene atau Autoload.");
+		}
+	}
 
 	public override void _ExitTree()
 	{

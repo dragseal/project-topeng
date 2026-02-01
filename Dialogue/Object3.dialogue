@@ -2,4 +2,6 @@
 do PlayBGM("res://SFX/Interact.mp3")
 Picked up a [color=#FF0000]Cracked Mask[/color].
 do SpawnGhost(300, 150)
+Press [color=#FF0000] space [/color] to avoid the Red Objects!.
+do EnableMask()
 => END
